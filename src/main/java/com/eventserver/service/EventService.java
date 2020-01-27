@@ -38,22 +38,12 @@ public class EventService {
 		zoneMap.put(1, "California");
 		zoneMap.put(2, "Louisiana");
 		zoneMap.put(3, "florida");
-//		int id = 0;
-//		try {
-//			id = Integer.parseInt(eventId);
-//		} catch(NumberFormatException nex) {
-//			
-//			evntSrvrResp.setMessage(nex.getMessage());
-//			evntSrvrResp.setSuccess(false);
-//			evntSrvrResp.setResult(dealLoss);
-//			return evntSrvrResp;
-//		}
 		int [][] events = data.getEvents();
 		
 		int id = eventId;
 		if(eventId>4 || eventId<=0) {
 			
-			evntSrvrResp.setMessage("Invalid Event");
+			evntSrvrResp.setMessage("No deals available for this event");
 			evntSrvrResp.setSuccess(false);
 			evntSrvrResp.setResult(dealLoss);
 			return evntSrvrResp;
@@ -97,7 +87,7 @@ public class EventService {
 			dealLoss.add(deal);
 		}
 		
-		evntSrvrResp.setMessage("");
+		evntSrvrResp.setMessage("Deals and reinsurance company loss is added");
 		evntSrvrResp.setSuccess(true);
 		evntSrvrResp.setResult(dealLoss);
 		
